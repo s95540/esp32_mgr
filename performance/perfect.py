@@ -1,5 +1,3 @@
-import gc
-import os
 import time
 import math
 
@@ -13,21 +11,10 @@ def is_perfect(n):
         s -= p
     return n == s
 
-def print_heap(label):
-    gc.collect()
-    print(label)
-    print("Free heap:", gc.mem_free(), "bytes")
-
-
-
-print_heap("Heap before alg:")
-
-a = 92233
+a = 9223372
 
 start = time.ticks_us()
 result = is_perfect(a)
 end = time.ticks_us()
-
-print_heap("Heap after alg:")
 
 print("Execution time (us):", time.ticks_diff(end, start))
